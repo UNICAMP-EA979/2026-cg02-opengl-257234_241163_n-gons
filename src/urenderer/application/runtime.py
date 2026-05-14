@@ -75,10 +75,7 @@ class Runtime:
 
             # Traverse the node children
             for child in node.children:
-                ## SEU CÓDIGO AQUI #####################################################
-                # Crie a transformação do nó filho, concatenando com as transformações anteriores
-
-                #########################################################################
+                child_transformation = transformation @ child.model_transform
 
                 # Add child to the processing queue
                 nodes.append((child, child_transformation))

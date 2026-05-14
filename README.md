@@ -57,9 +57,9 @@ A entrega deve ser pelo GitHub, consistindo tanto do código desenvolvido quanto
 
 Copie os arquivos da tarefa anterior:
 
-- [ ] urenderer/node/node.py
-- [ ] urenderer/node/camera.py
-- [ ] urenderer/aplication/runtime.py: copie **apenas** as funções que implementou na última tarefa.
+- [x] urenderer/node/node.py
+- [x] urenderer/node/camera.py
+- [x] urenderer/aplication/runtime.py: copie **apenas** as funções que implementou na última tarefa.
 
 
 Os arquivos indicados possuem mais informações quando necessário. Observe que, nos entrypoints, também pode ser necessário editar os arquivos de shaders `.vs` e `.fs`
