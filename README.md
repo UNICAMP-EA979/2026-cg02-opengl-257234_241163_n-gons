@@ -69,7 +69,7 @@ Os arquivos indicados possuem mais informações quando necessário. Observe que
 ## Renderizando utilizando nossa aplicação
 
 - [X] urenderer/renderer/opengl/shader.py: implemente a compilação e linkagem de shaders, assim como o seu uso e uso de uniforms.
-- [ ] urenderer/geometry/mesh/mesh.py: implemente a geração e uso dos buffers de uma mesh.
+- [x] urenderer/geometry/mesh/mesh.py: implemente a geração e uso dos buffers de uma mesh.
 - [ ] urenderer/renderer/opengl/opengl_renderer.py: implemente a inicialização, uso das transformações e exibição do buffer de renderização.
 - [ ] Entrypoint 01-hello_cube.py: implemente o shader para utilizar as transformações de coordenadas e verifique o funcionamento do renderizador.
 
