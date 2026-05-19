@@ -111,7 +111,7 @@ class Shader:
         '''
         ## SEU CÓDIGO AQUI ######################################################
         # Usa o programa compilado e linkado anteriormente no contexto atual
-
+        GL.glUseProgram(self.shader_program)
         #########################################################################
 
     def _get_uniform_location(self, name: str) -> int:
@@ -150,14 +150,14 @@ class Shader:
         # https://registry.khronos.org/OpenGL-Refpages/gl4/html/glUniform.xhtml
 
         if isinstance(value, bool):
-            ...
+            GL.glUniform1i(location, int(value))
         elif isinstance(value, int):
-            ...
+            GL.glUniform1i(location, value)
         elif isinstance(value, float):
-            ...
+            GL.glUniform1f(location, value)
         elif isinstance(value, np.ndarray):
             if value.dtype == np.float32 and value.shape == (4, 4):
-                ...
+                GL.glUniformMatrix4fv(location, 1, False, value)
             else:
                 raise ValueError(f"Value type {type(value)} not supported")
         else:
