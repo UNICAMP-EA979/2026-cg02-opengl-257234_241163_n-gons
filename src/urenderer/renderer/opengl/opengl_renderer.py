@@ -49,13 +49,18 @@ class OpenGLRenderer(Renderer):
 
         ## SEU CÓDIGO AQUI ######################################################
         # Inicializa o GLFW, core profile e OpenGL 3.3
-
+        glfw.init()
+        glfw.window_hint(glfw.CONTEXT_VERSION_MAJOR, 3)
+        glfw.window_hint(glfw.CONTEXT_VERSION_MINOR, 3)
+        glfw.window_hint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
         #########################################################################
 
         ## SEU CÓDIGO AQUI ######################################################
         # Cria a janela, associando ela ao contexto
         # e configurando o tamanho dela no OpenGl
-
+        window = glfw.create_window(screen_width, screen_height, "URenderer", None, None)
+        glfw.make_context_current(window)
+        GL.glViewport(0, 0, screen_width, screen_height)
         #########################################################################
 
         glfw.set_framebuffer_size_callback(
