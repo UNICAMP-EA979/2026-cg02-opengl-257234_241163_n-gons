@@ -68,7 +68,9 @@ class Shader:
 
             ## SEU CÓDIGO AQUI ######################################################
             # Cria e compila o vertex shader
-            vertex_shader =
+            vertex_shader = GL.glCreateShader(GL.GL_VERTEX_SHADER)
+            GL.glShaderSource(vertex_shader, vertex_shader_source)
+            GL.glCompileShader(vertex_shader)
             #########################################################################
 
             vertex_shader = cast(int, vertex_shader)
@@ -76,7 +78,9 @@ class Shader:
 
             ## SEU CÓDIGO AQUI ######################################################
             # Cria e compila o fragment shader
-            fragment_shader =
+            fragment_shader = GL.glCreateShader(GL.GL_FRAGMENT_SHADER)
+            GL.glShaderSource(fragment_shader, fragment_shader_source)
+            GL.glCompileShader(fragment_shader)
             #########################################################################
 
             fragment_shader = cast(int, fragment_shader)
@@ -84,7 +88,10 @@ class Shader:
 
             ## SEU CÓDIGO AQUI ######################################################
             # Cria e linka o programa
-            shader_program =
+            shader_program = GL.glCreateProgram()
+            GL.glAttachShader(shader_program, vertex_shader)
+            GL.glAttachShader(shader_program, fragment_shader)
+            GL.glLinkProgram(shader_program)
             #########################################################################
 
             shader_program = cast(int, shader_program)
