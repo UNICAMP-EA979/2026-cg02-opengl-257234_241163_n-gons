@@ -177,7 +177,9 @@ class Mesh:
         '''
         ## SEU CÓDIGO AQUI ######################################################
         # Realiza o bind do VAO ao contexto e desenha a geometria contida nele
-
+        GL.glBindVertexArray(self._vao)
+        GL.glDrawElements(GL.GL_TRIANGLES, self._index.size, GL.GL_UNSIGNED_INT, None)
+        GL.glBindVertexArray(0)
         #########################################################################
 
     @property
