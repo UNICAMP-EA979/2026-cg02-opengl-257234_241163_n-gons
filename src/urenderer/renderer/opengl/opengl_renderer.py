@@ -177,7 +177,7 @@ class OpenGLRenderer(Renderer):
 
         ## SEU CÓDIGO AQUI ######################################################
         # Troque o buffer frontal e traseiro, mostrando o novo buffer renderizado
-
+        glfw.swap_buffers(self._window)
         #########################################################################
 
         glfw.poll_events()
