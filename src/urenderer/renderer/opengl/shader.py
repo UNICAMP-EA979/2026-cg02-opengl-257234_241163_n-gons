@@ -157,13 +157,7 @@ class Shader:
             GL.glUniform1f(location, value)
         elif isinstance(value, np.ndarray):
             if value.dtype == np.float32 and value.shape == (4, 4):
-                GL.glUniformMatrix4fv(location, 1, False, value)
-            elif value.dtype == np.float32 and value.shape == (3,):
-                GL.glUniform3fv(location, 1, value)
-            elif value.dtype == np.float32 and value.shape == (2,):
-                GL.glUniform2fv(location, 1, value)
-            elif value.dtype == np.float32 and value.shape == (4,):
-                GL.glUniform4fv(location, 1, value)
+                GL.glUniformMatrix4fv(location, 1, GL.GL_TRUE, value)
             else:
                 raise ValueError(f"Value type {type(value)} not supported")
         else:
