@@ -64,14 +64,14 @@ Copie os arquivos da tarefa anterior:
 
 Os arquivos indicados possuem mais informações quando necessário. Observe que, nos entrypoints, também pode ser necessário editar os arquivos de shaders `.vs` e `.fs`
 
-- [ ] Analise o entrypoint 00-hello.py. Ele contém a renderização de um triângulo utilizando OpenGL
+- [X] Analise o entrypoint 00-hello.py. Ele contém a renderização de um triângulo utilizando OpenGL
 
 ## Renderizando utilizando nossa aplicação
 
-- [ ] urenderer/renderer/opengl/shader.py: implemente a compilação e linkagem de shaders, assim como o seu uso e uso de uniforms.
-- [ ] urenderer/geometry/mesh/mesh.py: implemente a geração e uso dos buffers de uma mesh.
-- [ ] urenderer/renderer/opengl/opengl_renderer.py: implemente a inicialização, uso das transformações e exibição do buffer de renderização.
-- [ ] Entrypoint 01-hello_cube.py: implemente o shader para utilizar as transformações de coordenadas e verifique o funcionamento do renderizador.
+- [X] urenderer/renderer/opengl/shader.py: implemente a compilação e linkagem de shaders, assim como o seu uso e uso de uniforms.
+- [x] urenderer/geometry/mesh/mesh.py: implemente a geração e uso dos buffers de uma mesh.
+- [X] urenderer/renderer/opengl/opengl_renderer.py: implemente a inicialização, uso das transformações e exibição do buffer de renderização.
+- [X] Entrypoint 01-hello_cube.py: implemente o shader para utilizar as transformações de coordenadas e verifique o funcionamento do renderizador.
 
 ## Texturas
 
