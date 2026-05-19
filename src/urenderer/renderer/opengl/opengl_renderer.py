@@ -101,7 +101,8 @@ class OpenGLRenderer(Renderer):
         ## SEU CÓDIGO AQUI ######################################################
         # Limpe os buffers de cor e profundidade (COLOR_BUFFER e DEPTH_BUFFER)
         # Para o de cor, utilize a cor self.background_color
-
+        GL.glClearColor(*self.background_color)
+        GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT)
         #########################################################################
 
     def validate(self, node: Node) -> bool:
