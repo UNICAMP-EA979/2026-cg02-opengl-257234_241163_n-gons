@@ -33,7 +33,6 @@ if __name__ == "__main__":
     # Utilize urenderer.renderer.opengl.Texture.load_file e material.set_texture
     texture = urenderer.renderer.opengl.Texture.load_file("textures/baboon.png")
     material.set_texture(0, "texture0", texture)
-    material.use()
 
     #########################################################################
 
