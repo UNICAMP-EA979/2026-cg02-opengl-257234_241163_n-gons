@@ -49,6 +49,10 @@ if __name__ == "__main__":
     ## SEU CÓDIGO AQUI ######################################################
     # Crie um novo material com a textura "textures/monalisa.png" e utilize-o
     # no segundo cubo. Utilize o mesmo shader do primeiro material
+    material = urenderer.renderer.opengl.Material(shader)
+    texture = urenderer.renderer.opengl.Texture.load_file("textures/monalisa.png")
+    material.set_texture(0, "texture0", texture)
+    cube2.render_data["material"] = material
 
     #########################################################################
 
