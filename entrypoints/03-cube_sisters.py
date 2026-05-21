@@ -20,6 +20,21 @@ if __name__ == "__main__":
     ## SEU CÓDIGO AQUI ######################################################
     # Crie 2 cubos, ambos com mesmo material e textura "textures/baboon.png",
     # em posições diferentes
+    texture = urenderer.renderer.opengl.Texture.load_file("textures/baboon.png")
+    material.set_texture(0, "texture0", texture)
+
+    cube1 = urenderer.node.Node()
+    cube1.translation = np.array([-2, 0, -5], np.float64)
+    cube1.render_data["mesh"] = urenderer.geometry.mesh.get_mesh_cube()
+    cube1.render_data["material"] = material
+
+    cube2 = urenderer.node.Node()
+    cube2.translation = np.array([2, 0, -5], np.float64)
+    cube2.render_data["mesh"] = urenderer.geometry.mesh.get_mesh_cube()
+    cube2.render_data["material"] = material
+
+    runtime.scene.add_child(cube1)
+    runtime.scene.add_child(cube2)
 
     #########################################################################
 
@@ -34,6 +49,10 @@ if __name__ == "__main__":
     ## SEU CÓDIGO AQUI ######################################################
     # Crie um novo material com a textura "textures/monalisa.png" e utilize-o
     # no segundo cubo. Utilize o mesmo shader do primeiro material
+    material = urenderer.renderer.opengl.Material(shader)
+    texture = urenderer.renderer.opengl.Texture.load_file("textures/monalisa.png")
+    material.set_texture(0, "texture0", texture)
+    cube2.render_data["material"] = material
 
     #########################################################################
 
