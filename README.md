@@ -76,7 +76,7 @@ Os arquivos indicados possuem mais informações quando necessário. Observe que
 ## Texturas
 
 - [X] urenderer/renderer/opengl/texture.py: implemente a geração de buffer e uso de texturas.
-- [ ] Entrypoint 02-cube_texture.py: renderize um cubo com textura.
+- [X] Entrypoint 02-cube_texture.py: renderize um cubo com textura.
 - [ ] Entrypoint 03-cube_sisters.py: reutilize geometrias e texturas.
 
 ## Shaders e cores de vértice
