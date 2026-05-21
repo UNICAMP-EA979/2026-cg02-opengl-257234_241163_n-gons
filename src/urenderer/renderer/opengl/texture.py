@@ -72,6 +72,8 @@ class Texture:
         ## SEU CÓDIGO AQUI ######################################################
         # Ativa a texture unit e realiza o bind da textura
         # OBS: cada texture unit é sequencial: GL.GL_TEXTURE1 = GL.GL_TEXTURE0+1
+        GL.glActiveTexture(GL.GL_TEXTURE0 + unit)
+        GL.glBindTexture(GL.GL_TEXTURE_2D, self._texture_id)
 
         #########################################################################
 
