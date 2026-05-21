@@ -49,6 +49,7 @@ class Texture:
         self.parameters: dict[IntConstant, int] = {}
         for parameter, value in Texture._default_parameters.items():
             GL.glTexParameteri(GL.GL_TEXTURE_2D, parameter, value)
+            self.parameters[parameter] = value
 
         # Especifica os dados da textura
         GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, 
