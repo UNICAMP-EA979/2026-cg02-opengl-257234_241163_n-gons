@@ -17,13 +17,22 @@ if __name__ == "__main__":
     node = urenderer.node.Node()
 
     node.translation = np.array([0, 0, -2], np.float64)
-    node.render_data["mesh"] = urenderer.geometry.mesh.get_mesh_triangle()
-    node.render_data["material"] = material
+
+    mesh = urenderer.geometry.mesh.get_mesh_triangle()
 
     ## SEU CÓDIGO AQUI ######################################################
     # Defina as cores dos vértices
 
+    mesh.color = np.array([
+        1.0, 0.0, 0.0,  # vermelho
+        0.0, 1.0, 0.0,  # verde
+        0.0, 0.0, 1.0,  # azul
+    ], dtype=np.float32)
+
     #########################################################################
+
+    node.render_data["mesh"] = mesh
+    node.render_data["material"] = material
 
     runtime.scene.add_child(node)
 
