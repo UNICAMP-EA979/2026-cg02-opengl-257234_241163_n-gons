@@ -15,6 +15,22 @@ def get_mesh_triangle() -> Mesh:
     # Cria os vértices, índices e UVs de um triângulo
     # no plano z=0 e centrado em (0,0)
 
+    vertices = np.array([
+        -0.5, -0.5, 0.0,
+         0.5, -0.5, 0.0,
+         0.0,  0.5, 0.0,
+    ], dtype=np.float32)
+
+    indices = np.array([
+        0, 1, 2
+    ], dtype=np.uint32)
+
+    uv = np.array([
+        0.0, 0.0,
+        1.0, 0.0,
+        0.5, 1.0,
+    ], dtype=np.float32)
+
     #########################################################################
 
     return Mesh(vertices, indices, uv)

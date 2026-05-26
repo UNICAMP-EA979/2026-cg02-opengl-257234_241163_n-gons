@@ -81,8 +81,8 @@ Os arquivos indicados possuem mais informações quando necessário. Observe que
 
 ## Shaders e cores de vértice
 
-- [ ] Entrypoint 04-colors.py: utilize cores de vértices e interpolação para renderizar um triângulo colorido.
-- [ ] Entrypoint 05-cube_rainbow_madness.py: crie vários cubos com cores animadas.
+- [x] Entrypoint 04-colors.py: utilize cores de vértices e interpolação para renderizar um triângulo colorido.
+- [x] Entrypoint 05-cube_rainbow_madness.py: crie vários cubos com cores animadas.
 
 ## Executando o código
 
