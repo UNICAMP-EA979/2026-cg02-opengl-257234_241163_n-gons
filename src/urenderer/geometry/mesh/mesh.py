@@ -85,7 +85,11 @@ class Mesh:
         '''
         ## SEU CÓDIGO AQUI ######################################################
         # Faça bind do VAO e EBO e envie os dados do EBO
-
+        GL.glBindVertexArray(self._vao)
+        GL.glBindBuffer(GL.GL_ELEMENT_ARRAY_BUFFER, self._ebo)
+        GL.glBufferData(GL.GL_ELEMENT_ARRAY_BUFFER,
+                        self._index.nbytes, self._index, GL.GL_STATIC_DRAW)
+        GL.glBindVertexArray(0)
         #########################################################################
 
     def _update_vbo(self):
@@ -111,7 +115,8 @@ class Mesh:
 
         ## SEU CÓDIGO AQUI ######################################################
         # Bind the VAO and VBO
-
+        GL.glBindVertexArray(self._vao)
+        GL.glBindBuffer(GL.GL_ARRAY_BUFFER, self._vbo)
         #########################################################################
 
         check_type_dict = {"vertex": self._vertex,
@@ -138,15 +143,29 @@ class Mesh:
 
         ## SEU CÓDIGO AQUI ######################################################
         # Envia os dados para o buffer
-
+        GL.glBufferData(GL.GL_ARRAY_BUFFER, data.nbytes, data, GL.GL_STATIC_DRAW)
+        
         # Configura os atributos do buffer
+        offset = 0
+        # Vertex:
+        GL.glVertexAttribPointer(0, 3, GL.GL_FLOAT, GL.GL_FALSE, n_item*data.itemsize, c_void_p(offset*data.itemsize))
+        GL.glEnableVertexAttribArray(0)
+        offset += 3
+
+        # UV:
+        GL.glVertexAttribPointer(1, 2, GL.GL_FLOAT, GL.GL_FALSE, n_item*data.itemsize, c_void_p(offset*data.itemsize))
+        GL.glEnableVertexAttribArray(1)
+        offset += 2
 
         if self._color is not None:
-            ...
+            GL.glVertexAttribPointer(2, 3, GL.GL_FLOAT, GL.GL_FALSE, n_item*data.itemsize, c_void_p(offset*data.itemsize))
+            GL.glEnableVertexAttribArray(2)
+            offset += 3
 
         if self._normal is not None:
-            ...
-
+            GL.glVertexAttribPointer(3, 3, GL.GL_FLOAT, GL.GL_FALSE, n_item*data.itemsize, c_void_p(offset*data.itemsize))
+            GL.glEnableVertexAttribArray(3)
+            offset += 3
         #########################################################################
 
         # Unbind the VAO
@@ -158,7 +177,9 @@ class Mesh:
         '''
         ## SEU CÓDIGO AQUI ######################################################
         # Realiza o bind do VAO ao contexto e desenha a geometria contida nele
-
+        GL.glBindVertexArray(self._vao)
+        GL.glDrawElements(GL.GL_TRIANGLES, self._index.size, GL.GL_UNSIGNED_INT, None)
+        GL.glBindVertexArray(0)
         #########################################################################
 
     @property
